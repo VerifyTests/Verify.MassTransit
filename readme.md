@@ -105,7 +105,7 @@ public async Task TestWithVerify()
 
 The above will result in the following snapshot file that will need to be [accepted](https://github.com/VerifyTests/Verify#snapshot-management).
 
-<!-- snippet: ConsumerTest.Run.verified.txt -->
+<!-- snippet: ConsumerTest.TestWithVerify.verified.txt -->
 <a id='snippet-ConsumerTest.Run.verified.txt'></a>
 ```txt
 {
