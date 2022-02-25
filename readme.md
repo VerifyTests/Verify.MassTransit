@@ -109,27 +109,27 @@ The above will result in the following snapshot file.
     Messages: [
       {
         Category: Send,
-        MessageType: ConsumerTest.SubmitOrder,
+        Type: ConsumerTest.SubmitOrder,
         StartTime: DateTime_1,
-        MessageObject: {
+        Message: {
           OrderId: Guid_1
         }
       },
       {
         Category: Received,
-        MessageType: ConsumerTest.SubmitOrder,
-        MessageObject: {
+        Type: ConsumerTest.SubmitOrder,
+        StartTime: DateTime_2,
+        Message: {
           OrderId: Guid_1
-        },
-        StartTime: DateTime_2
+        }
       },
       {
         Category: Published,
-        MessageType: ConsumerTest.OrderSubmitted,
-        MessageObject: {
+        Type: ConsumerTest.OrderSubmitted,
+        StartTime: DateTime_3,
+        Message: {
           OrderId: Guid_1
-        },
-        StartTime: DateTime_3
+        }
       }
     ]
   },
@@ -137,11 +137,11 @@ The above will result in the following snapshot file.
     Consumed: [
       {
         Category: Received,
-        MessageType: ConsumerTest.SubmitOrder,
-        MessageObject: {
+        Type: ConsumerTest.SubmitOrder,
+        StartTime: DateTime_4,
+        Message: {
           OrderId: Guid_1
-        },
-        StartTime: DateTime_4
+        }
       }
     ]
   }
