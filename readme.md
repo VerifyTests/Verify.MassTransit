@@ -33,70 +33,74 @@ public static class ModuleInitializer
 
 ### Consumer Test
 
-To test a consumer, use the consumer test harness.
+Using asserts message, consumer interactions can be tested as follows:
 
-The message interactions of both the TestHarness and the ConsumerHarness can then be verified.
-
-<!-- snippet: ConsumerTest -->
-<a id='snippet-consumertest'></a>
+<!-- snippet: ConsumerTestAsserts -->
+<a id='snippet-consumertestasserts'></a>
 ```cs
-[UsesVerify]
-public class ConsumerTest
+[Fact]
+public async Task TestWithAsserts()
 {
-    [Fact]
-    public async Task Run()
+    var harness = new InMemoryTestHarness();
+    var consumerHarness = harness.Consumer<SubmitOrderConsumer>();
+
+    await harness.Start();
+    try
     {
-        var harness = new InMemoryTestHarness();
-        var consumer = harness.Consumer<SubmitOrderConsumer>();
-
-        await harness.Start();
-        try
-        {
-            await harness.InputQueueSendEndpoint
-                .Send<SubmitOrder>(
-                    new
-                    {
-                        OrderId = InVar.Id
-                    });
-
-        }
-        finally
-        {
-            await harness.Stop();
-        }
-        await Verify(
+        await harness.InputQueueSendEndpoint.Send<SubmitOrder>(
             new
             {
-                harness,
-                consumer
+                OrderId = InVar.Id
             });
-    }
 
-    public interface SubmitOrder
-    {
-        Guid OrderId { get; }
+        // did the endpoint consume the message
+        Assert.True(await harness.Consumed.Any<SubmitOrder>());
+        // did the actual consumer consume the message
+        Assert.True(await consumerHarness.Consumed.Any<SubmitOrder>());
+        // the consumer publish the event
+        Assert.True(await harness.Published.Any<OrderSubmitted>());
+        // ensure that no faults were published by the consumer
+        Assert.False(await harness.Published.Any<Fault<SubmitOrder>>());
     }
-
-    public interface OrderSubmitted
+    finally
     {
-        Guid OrderId { get; }
-    }
-
-    class SubmitOrderConsumer :
-        IConsumer<SubmitOrder>
-    {
-        public async Task Consume(ConsumeContext<SubmitOrder> context)
-        {
-            await context.Publish<OrderSubmitted>(
-                new
-                {
-                    context.Message.OrderId
-                });
-        }
+        await harness.Stop();
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTest.cs#L6-L63' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertest' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTest.cs#L10-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestasserts' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Using Verify, the TestHarness and any number of ConsumerHarness, can be passed to `Verify`.
+
+<!-- snippet: ConsumerTestVerify -->
+<a id='snippet-consumertestverify'></a>
+```cs
+[Fact]
+public async Task TestWithVerify()
+{
+    var harness = new InMemoryTestHarness();
+    var consumer = harness.Consumer<SubmitOrderConsumer>();
+
+    await harness.Start();
+    try
+    {
+        await harness.InputQueueSendEndpoint
+            .Send<SubmitOrder>(
+                new
+                {
+                    OrderId = InVar.Id
+                });
+
+        await Verify(new {harness, consumer});
+    }
+    finally
+    {
+        await harness.Stop();
+    }
+}
+```
+<sup><a href='/src/Tests/ConsumerTest.cs#L44-L70' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestverify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The above will result in the following snapshot file.
@@ -109,27 +113,27 @@ The above will result in the following snapshot file.
     Messages: [
       {
         Category: Send,
-        MessageType: ConsumerTest.SubmitOrder,
+        Type: ConsumerTest.SubmitOrder,
         StartTime: DateTime_1,
-        MessageObject: {
+        Message: {
           OrderId: Guid_1
         }
       },
       {
         Category: Received,
-        MessageType: ConsumerTest.SubmitOrder,
-        MessageObject: {
+        Type: ConsumerTest.SubmitOrder,
+        StartTime: DateTime_2,
+        Message: {
           OrderId: Guid_1
-        },
-        StartTime: DateTime_2
+        }
       },
       {
         Category: Published,
-        MessageType: ConsumerTest.OrderSubmitted,
-        MessageObject: {
+        Type: ConsumerTest.OrderSubmitted,
+        StartTime: DateTime_3,
+        Message: {
           OrderId: Guid_1
-        },
-        StartTime: DateTime_3
+        }
       }
     ]
   },
@@ -137,11 +141,11 @@ The above will result in the following snapshot file.
     Consumed: [
       {
         Category: Received,
-        MessageType: ConsumerTest.SubmitOrder,
-        MessageObject: {
+        Type: ConsumerTest.SubmitOrder,
+        StartTime: DateTime_4,
+        Message: {
           OrderId: Guid_1
-        },
-        StartTime: DateTime_4
+        }
       }
     ]
   }
@@ -153,4 +157,4 @@ The above will result in the following snapshot file.
 
 ## Icon
 
-[Approval](https://thenounproject.com/term/approval/1759519/) designed by [Mike Zuidgeest](https://thenounproject.com/zuidgeest/) from [The Noun Project](https://thenounproject.com/).
+[Approval](https://thenounproject.com/term/bus/4628287/) designed by [SAM Designs](https://thenounproject.com/ma2947422/) from [The Noun Project](https://thenounproject.com/).

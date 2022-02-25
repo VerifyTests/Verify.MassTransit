@@ -3,13 +3,48 @@ using MassTransit.Testing;
 
 namespace Tests;
 
-#region ConsumerTest
 
 [UsesVerify]
 public class ConsumerTest
 {
+    #region ConsumerTestAsserts
+
     [Fact]
-    public async Task Run()
+    public async Task TestWithAsserts()
+    {
+        var harness = new InMemoryTestHarness();
+        var consumerHarness = harness.Consumer<SubmitOrderConsumer>();
+
+        await harness.Start();
+        try
+        {
+            await harness.InputQueueSendEndpoint.Send<SubmitOrder>(
+                new
+                {
+                    OrderId = InVar.Id
+                });
+
+            // did the endpoint consume the message
+            Assert.True(await harness.Consumed.Any<SubmitOrder>());
+            // did the actual consumer consume the message
+            Assert.True(await consumerHarness.Consumed.Any<SubmitOrder>());
+            // the consumer publish the event
+            Assert.True(await harness.Published.Any<OrderSubmitted>());
+            // ensure that no faults were published by the consumer
+            Assert.False(await harness.Published.Any<Fault<SubmitOrder>>());
+        }
+        finally
+        {
+            await harness.Stop();
+        }
+    }
+
+    #endregion
+
+    #region ConsumerTestVerify
+
+    [Fact]
+    public async Task TestWithVerify()
     {
         var harness = new InMemoryTestHarness();
         var consumer = harness.Consumer<SubmitOrderConsumer>();
@@ -24,18 +59,15 @@ public class ConsumerTest
                         OrderId = InVar.Id
                     });
 
+            await Verify(new {harness, consumer});
         }
         finally
         {
             await harness.Stop();
         }
-        await Verify(
-            new
-            {
-                harness,
-                consumer
-            });
     }
+
+    #endregion
 
     public interface SubmitOrder
     {
@@ -60,4 +92,3 @@ public class ConsumerTest
         }
     }
 }
-#endregion
