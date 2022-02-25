@@ -103,7 +103,7 @@ public async Task TestWithVerify()
 <sup><a href='/src/Tests/ConsumerTest.cs#L44-L70' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestverify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-The above will result in the following snapshot file.
+The above will result in the following snapshot file that will need to be [accepted](https://github.com/VerifyTests/Verify#snapshot-management).
 
 <!-- snippet: ConsumerTest.Run.verified.txt -->
 <a id='snippet-ConsumerTest.Run.verified.txt'></a>
@@ -153,6 +153,8 @@ The above will result in the following snapshot file.
 ```
 <sup><a href='/src/Tests/ConsumerTest.Run.verified.txt#L1-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTest.Run.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
+
+Moving forward, any change in the message interactions will result in a new snapshot that can then be [accepted or declines](https://github.com/VerifyTests/Verify#snapshot-management)
 
 
 ## Icon
