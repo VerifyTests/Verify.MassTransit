@@ -106,7 +106,7 @@ public async Task TestWithVerify()
 The above will result in the following snapshot file that will need to be [accepted](https://github.com/VerifyTests/Verify#snapshot-management).
 
 <!-- snippet: ConsumerTest.TestWithVerify.verified.txt -->
-<a id='snippet-ConsumerTest.Run.verified.txt'></a>
+<a id='snippet-ConsumerTest.TestWithVerify.verified.txt'></a>
 ```txt
 {
   harness: {
@@ -151,7 +151,7 @@ The above will result in the following snapshot file that will need to be [accep
   }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTest.Run.verified.txt#L1-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTest.Run.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTest.TestWithVerify.verified.txt#L1-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTest.TestWithVerify.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Moving forward, any change in the message interactions will result in a new snapshot that can then be [accepted or declines](https://github.com/VerifyTests/Verify#snapshot-management)
