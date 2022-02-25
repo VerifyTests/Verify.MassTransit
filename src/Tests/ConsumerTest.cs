@@ -3,6 +3,8 @@ using MassTransit.Testing;
 
 namespace Tests;
 
+#region ConsumerTest
+
 [UsesVerify]
 public class ConsumerTest
 {
@@ -10,22 +12,29 @@ public class ConsumerTest
     public async Task Run()
     {
         var harness = new InMemoryTestHarness();
-        var consumerHarness = harness.Consumer<SubmitOrderConsumer>();
+        var consumer = harness.Consumer<SubmitOrderConsumer>();
 
         await harness.Start();
         try
         {
-            await harness.InputQueueSendEndpoint.Send<SubmitOrder>(new
-            {
-                OrderId = InVar.Id
-            });
+            await harness.InputQueueSendEndpoint
+                .Send<SubmitOrder>(
+                    new
+                    {
+                        OrderId = InVar.Id
+                    });
 
-            await Verify(harness);
         }
         finally
         {
             await harness.Stop();
         }
+        await Verify(
+            new
+            {
+                harness,
+                consumer
+            });
     }
 
     public interface SubmitOrder
@@ -43,11 +52,12 @@ public class ConsumerTest
     {
         public async Task Consume(ConsumeContext<SubmitOrder> context)
         {
-            await context.Publish<OrderSubmitted>(new
-            {
-                context.Message.OrderId
-            });
+            await context.Publish<OrderSubmitted>(
+                new
+                {
+                    context.Message.OrderId
+                });
         }
-
     }
 }
+#endregion
