@@ -33,7 +33,7 @@ public static class ModuleInitializer
 
 ### Consumer Test
 
-Using asserts message, consumer interactions can be tested as follows:
+Using traditional asserts consumer interactions can be tested as follows:
 
 <!-- snippet: ConsumerTestAsserts -->
 <a id='snippet-consumertestasserts'></a>
