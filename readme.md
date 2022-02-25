@@ -1,6 +1,6 @@
 # <img src="/src/icon.png" height="30px"> Verify.MassTransit
 
-[![Build status](https://ci.appveyor.com/api/projects/status/wwrri8srggv1h56j/branch/main?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-NServiceBus)
+[![Build status](https://ci.appveyor.com/api/projects/status/6quuecxv8hh0snd3/branch/main?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-MassTransit)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.MassTransit.svg)](https://www.nuget.org/packages/Verify.MassTransit/)
 
 Adds [Verify](https://github.com/VerifyTests/Verify) support to verify [MassTransit test helpers](https://masstransit-project.com/usage/testing.html).
