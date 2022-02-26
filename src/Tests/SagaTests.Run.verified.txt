@@ -1,0 +1,37 @@
+﻿{
+  harness: {
+    Messages: [
+      {
+        Published: SagaTests.Start,
+        Message: {
+          CorrelationId: Guid_1
+        }
+      },
+      {
+        Received: SagaTests.Start,
+        Message: {
+          CorrelationId: Guid_1
+        }
+      }
+    ]
+  },
+  sagaHarness: {
+    Consumed: [
+      {
+        Received: SagaTests.Start,
+        Message: {
+          CorrelationId: Guid_1
+        }
+      }
+    ],
+    Sagas: [
+      {
+        Saga: {
+          CorrelationId: Guid_1,
+          StartMessageReceived: true
+        },
+        ElementId: Guid_1
+      }
+    ]
+  }
+}

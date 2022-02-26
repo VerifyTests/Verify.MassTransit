@@ -68,7 +68,7 @@ public async Task TestWithAsserts()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTest.cs#L10-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestasserts' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L9-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestasserts' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Using Verify, the TestHarness and any number of ConsumerHarness, can be passed to `Verify`.
@@ -100,37 +100,31 @@ public async Task TestWithVerify()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTest.cs#L44-L70' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestverify' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L43-L69' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestverify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The above will result in the following snapshot file that will need to be [accepted](https://github.com/VerifyTests/Verify#snapshot-management).
 
-<!-- snippet: ConsumerTest.TestWithVerify.verified.txt -->
-<a id='snippet-ConsumerTest.TestWithVerify.verified.txt'></a>
+<!-- snippet: ConsumerTests.TestWithVerify.verified.txt -->
+<a id='snippet-ConsumerTests.TestWithVerify.verified.txt'></a>
 ```txt
 {
   harness: {
     Messages: [
       {
-        Category: Send,
-        Type: ConsumerTest.SubmitOrder,
-        StartTime: DateTime_1,
+        Sent: ConsumerTests.SubmitOrder,
         Message: {
           OrderId: Guid_1
         }
       },
       {
-        Category: Received,
-        Type: ConsumerTest.SubmitOrder,
-        StartTime: DateTime_2,
+        Received: ConsumerTests.SubmitOrder,
         Message: {
           OrderId: Guid_1
         }
       },
       {
-        Category: Published,
-        Type: ConsumerTest.OrderSubmitted,
-        StartTime: DateTime_3,
+        Published: ConsumerTests.OrderSubmitted,
         Message: {
           OrderId: Guid_1
         }
@@ -140,9 +134,7 @@ The above will result in the following snapshot file that will need to be [accep
   consumer: {
     Consumed: [
       {
-        Category: Received,
-        Type: ConsumerTest.SubmitOrder,
-        StartTime: DateTime_4,
+        Received: ConsumerTests.SubmitOrder,
         Message: {
           OrderId: Guid_1
         }
@@ -151,7 +143,7 @@ The above will result in the following snapshot file that will need to be [accep
   }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTest.TestWithVerify.verified.txt#L1-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTest.TestWithVerify.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.TestWithVerify.verified.txt#L1-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTests.TestWithVerify.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Moving forward, any change in the message interactions will result in a new snapshot that can then be [accepted or declines](https://github.com/VerifyTests/Verify#snapshot-management)

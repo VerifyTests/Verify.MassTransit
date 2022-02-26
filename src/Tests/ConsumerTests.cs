@@ -3,9 +3,8 @@ using MassTransit.Testing;
 
 namespace Tests;
 
-
 [UsesVerify]
-public class ConsumerTest
+public class ConsumerTests
 {
     #region ConsumerTestAsserts
 

@@ -17,6 +17,8 @@ public static class VerifyMassTransit
                 converters.Add(new SentMessageListConverter());
                 converters.Add(new PublishedMessageConverter());
                 converters.Add(new PublishedMessageListConverter());
+                converters.Add(new SagaTestHarnessConverter());
+                converters.Add(new SagaListConverter());
             });
         });
     }
