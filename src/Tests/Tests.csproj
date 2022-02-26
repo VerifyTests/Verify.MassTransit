@@ -14,7 +14,4 @@
     <PackageReference Include="ProjectDefaults" Version="1.0.68" PrivateAssets="all" />
     <ProjectReference Include="..\Verify.MassTransit\Verify.MassTransit.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Snippets" />
-  </ItemGroup>
 </Project>
