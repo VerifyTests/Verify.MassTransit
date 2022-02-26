@@ -3,14 +3,20 @@
     Messages: [
       {
         Published: SagaTests.Start,
+        MessageId: Guid_1,
+        ConversationId: Guid_2,
+        DestinationAddress: Tests:SagaTests+Start,
         Message: {
-          CorrelationId: Guid_1
+          CorrelationId: Guid_3
         }
       },
       {
         Received: SagaTests.Start,
+        MessageId: Guid_1,
+        ConversationId: Guid_2,
+        ReceiveAddress: input_queue,
         Message: {
-          CorrelationId: Guid_1
+          CorrelationId: Guid_3
         }
       }
     ]
@@ -19,18 +25,21 @@
     Consumed: [
       {
         Received: SagaTests.Start,
+        MessageId: Guid_1,
+        ConversationId: Guid_2,
+        ReceiveAddress: input_queue,
         Message: {
-          CorrelationId: Guid_1
+          CorrelationId: Guid_3
         }
       }
     ],
     Sagas: [
       {
         Saga: {
-          CorrelationId: Guid_1,
+          CorrelationId: Guid_3,
           StartMessageReceived: true
         },
-        ElementId: Guid_1
+        ElementId: Guid_3
       }
     ]
   }

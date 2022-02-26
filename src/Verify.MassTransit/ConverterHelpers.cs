@@ -9,4 +9,17 @@ static class ConverterHelpers
             writer.WriteProperty(context, headers, "Headers");
         }
     }
+
+    public static string? Suffix(this Uri? uri)
+    {
+        if (uri == null)
+        {
+            return null;
+        }
+
+        var path = uri.AbsolutePath;
+        path = path.Replace("urn:message:", "");
+        path = path.TrimStart('/');
+        return path;
+    }
 }

@@ -7,8 +7,12 @@ class ReceivedMessageConverter :
     {
         writer.WriteStartObject();
         writer.WriteProperty(message, message.MessageType, "Received");
+        var context = message.Context;
+        writer.WriteProperty(context, context.MessageId, "MessageId");
+        writer.WriteProperty(context, context.ConversationId, "ConversationId");
+        writer.WriteProperty(context, context.ReceiveContext.InputAddress.Suffix(), "ReceiveAddress");
         writer.WriteProperty(message, message.MessageObject, "Message");
-        writer.WriteHeaders(message.Context, message.Context.Headers);
+        writer.WriteHeaders(context, context.Headers);
         if (message.Exception != null)
         {
             writer.WriteProperty(message, message.Exception, "Exception");

@@ -7,6 +7,7 @@ namespace Tests;
 [UsesVerify]
 public class SagaTests
 {
+    #region SagaTests
     [Fact]
     public async Task Run()
     {
@@ -48,4 +49,5 @@ public class SagaTests
     {
         public Guid CorrelationId { get; set; }
     }
+    #endregion
 }
