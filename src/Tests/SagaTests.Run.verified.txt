@@ -14,7 +14,7 @@
         Received: SagaTests.Start,
         MessageId: Guid_1,
         ConversationId: Guid_2,
-        ReceiveAddress: input_queue,
+        DestinationAddress: Tests:SagaTests+Start,
         Message: {
           CorrelationId: Guid_3
         }
@@ -27,7 +27,7 @@
         Received: SagaTests.Start,
         MessageId: Guid_1,
         ConversationId: Guid_2,
-        ReceiveAddress: input_queue,
+        DestinationAddress: Tests:SagaTests+Start,
         Message: {
           CorrelationId: Guid_3
         }

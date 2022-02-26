@@ -14,7 +14,7 @@
         Received: ConsumerTests.SubmitOrder,
         MessageId: Guid_1,
         ConversationId: Guid_2,
-        ReceiveAddress: input_queue,
+        DestinationAddress: input_queue,
         Message: {
           OrderId: Guid_3
         }
@@ -36,7 +36,7 @@
         Received: ConsumerTests.SubmitOrder,
         MessageId: Guid_1,
         ConversationId: Guid_2,
-        ReceiveAddress: input_queue,
+        DestinationAddress: input_queue,
         Message: {
           OrderId: Guid_3
         }

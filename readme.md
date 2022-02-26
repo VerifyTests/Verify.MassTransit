@@ -124,7 +124,7 @@ The above will result in the following snapshot file that will need to be [accep
         Received: ConsumerTests.SubmitOrder,
         MessageId: Guid_1,
         ConversationId: Guid_2,
-        ReceiveAddress: input_queue,
+        DestinationAddress: input_queue,
         Message: {
           OrderId: Guid_3
         }
@@ -146,7 +146,7 @@ The above will result in the following snapshot file that will need to be [accep
         Received: ConsumerTests.SubmitOrder,
         MessageId: Guid_1,
         ConversationId: Guid_2,
-        ReceiveAddress: input_queue,
+        DestinationAddress: input_queue,
         Message: {
           OrderId: Guid_3
         }
@@ -234,7 +234,7 @@ Will result in the following snapshot file.
         Received: SagaTests.Start,
         MessageId: Guid_1,
         ConversationId: Guid_2,
-        ReceiveAddress: input_queue,
+        DestinationAddress: Tests:SagaTests+Start,
         Message: {
           CorrelationId: Guid_3
         }
@@ -247,7 +247,7 @@ Will result in the following snapshot file.
         Received: SagaTests.Start,
         MessageId: Guid_1,
         ConversationId: Guid_2,
-        ReceiveAddress: input_queue,
+        DestinationAddress: Tests:SagaTests+Start,
         Message: {
           CorrelationId: Guid_3
         }
