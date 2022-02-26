@@ -7,8 +7,8 @@ class SentMessageConverter :
     {
         writer.WriteStartObject();
         writer.WriteProperty(message, message.MessageType, "Sent");
-        //writer.WriteProperty(message, message.StartTime, "StartTime");
         writer.WriteProperty(message, message.MessageObject, "Message");
+        writer.WriteHeaders(message.Context, message.Context.Headers);
         if (message.Exception != null)
         {
             writer.WriteProperty(message, message.Exception, "Exception");
