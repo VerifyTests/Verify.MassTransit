@@ -1,6 +1,6 @@
-﻿using MassTransit.Saga;
+﻿using MassTransit;
 using MassTransit.Testing;
-using MassTransit.Testing.MessageObservers;
+using MassTransit.Testing.Implementations;
 
 class SagaListConverter :
     WriteOnlyJsonConverter
@@ -8,8 +8,12 @@ class SagaListConverter :
     public override void Write(VerifyJsonWriter writer, object sagas)
     {
         var sagaType = sagas.GetType().GetGenericArguments().Single();
-        GetType().GetMethod("WriteGeneric").MakeGenericMethod(sagaType).Invoke(this, new[] {writer, sagas});
+        GetType().GetMethod("WriteGeneric").MakeGenericMethod(sagaType).Invoke(this, new[]
+        {
+            writer, sagas
+        });
     }
+
     public void WriteGeneric<T>(VerifyJsonWriter writer, ISagaList<T> sagas)
         where T : class, ISaga
     {
@@ -21,9 +25,7 @@ class SagaListConverter :
 
         writer.WriteEndArray();
     }
-    public override bool CanConvert(Type type)
-    {
-        var canConvertToGeneric = type.CanConvertToGeneric(typeof(SagaList<>));
-        return canConvertToGeneric;
-    }
+
+    public override bool CanConvert(Type type) =>
+        type.CanConvertToGeneric(typeof(SagaList<>));
 }

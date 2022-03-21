@@ -15,8 +15,6 @@ class SagaTestHarnessConverter :
         writer.WriteEndObject();
     }
 
-    public override bool CanConvert(Type type)
-    {
-        return type.CanConvertToGeneric(typeof(SagaTestHarness<>));
-    }
+    public override bool CanConvert(Type type) =>
+        type.CanConvertToGeneric(typeof(SagaTestHarness<>));
 }

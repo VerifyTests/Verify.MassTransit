@@ -1,5 +1,4 @@
 ﻿using MassTransit.Testing;
-using MassTransit.Testing.MessageObservers;
 
 class TestHarnessConverter :
     WriteOnlyJsonConverter<BusTestHarness>

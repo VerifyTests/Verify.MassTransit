@@ -21,13 +21,11 @@ Before any test have run call:
 public static class ModuleInitializer
 {
     [ModuleInitializer]
-    public static void Initialize()
-    {
+    public static void Initialize() =>
         VerifyMassTransit.Enable();
-    }
 }
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-ModuleInitializer.cs' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-ModuleInitializer.cs' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -210,7 +208,7 @@ public class Start : CorrelatedBy<Guid>
     public Guid CorrelationId { get; set; }
 }
 ```
-<sup><a href='/src/Tests/SagaTests.cs#L10-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-sagatests' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SagaTests.cs#L9-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-sagatests' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will result in the following snapshot file.

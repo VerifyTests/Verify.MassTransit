@@ -11,8 +11,6 @@ class ConsumerTestHarnessConverter :
         writer.WriteEndObject();
     }
 
-    public override bool CanConvert(Type type)
-    {
-        return type.CanConvertToGeneric(typeof(ConsumerTestHarness<>));
-    }
+    public override bool CanConvert(Type type) =>
+        type.CanConvertToGeneric(typeof(ConsumerTestHarness<>));
 }

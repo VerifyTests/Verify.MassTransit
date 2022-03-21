@@ -1,5 +1,4 @@
 ﻿using MassTransit;
-using MassTransit.Saga;
 using MassTransit.Testing;
 
 namespace Tests;

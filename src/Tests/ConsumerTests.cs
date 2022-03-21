@@ -81,13 +81,11 @@ public class ConsumerTests
     class SubmitOrderConsumer :
         IConsumer<SubmitOrder>
     {
-        public async Task Consume(ConsumeContext<SubmitOrder> context)
-        {
-            await context.Publish<OrderSubmitted>(
+        public Task Consume(ConsumeContext<SubmitOrder> context) =>
+            context.Publish<OrderSubmitted>(
                 new
                 {
                     context.Message.OrderId
                 });
-        }
     }
 }

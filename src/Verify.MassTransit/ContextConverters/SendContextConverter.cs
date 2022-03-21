@@ -15,7 +15,7 @@ class SendContextConverter :
         writer.WriteProperty(context, context.ScheduledMessageId, "ScheduledMessageId");
         writer.WriteHeaders(context, context.Headers);
         writer.WriteProperty(context, context.TimeToLive, "TimeToLive");
-        writer.WriteProperty(context, context.ContentType.MediaType, "ContentType");
+        writer.WriteProperty(context, context.ContentType?.MediaType, "ContentType");
         if (!context.Durable)
         {
             writer.WriteProperty(context, context.Durable, "Durable");

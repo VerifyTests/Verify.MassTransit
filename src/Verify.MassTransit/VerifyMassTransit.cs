@@ -2,8 +2,7 @@
 
 public static class VerifyMassTransit
 {
-    public static void Enable()
-    {
+    public static void Enable() =>
         VerifierSettings.ModifySerialization(settings =>
         {
             settings.AddExtraSettings(serializerSettings =>
@@ -24,7 +23,7 @@ public static class VerifyMassTransit
                 converters.Add(new ReceiveContextConverter());
             });
         });
-    }
+
     internal static bool CanConvertToGeneric(this Type from, Type to)
     {
         do
