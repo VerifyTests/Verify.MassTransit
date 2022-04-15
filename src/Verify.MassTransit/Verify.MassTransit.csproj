@@ -4,9 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MassTransit" Version="8.0.0" />
+    <PackageReference Include="MassTransit" Version="8.0.1" />
     <PackageReference Include="SimpleInfoName" Version="1.1.1" />
-    <PackageReference Include="Verify" Version="16.4.3" />
+    <PackageReference Include="Verify" Version="16.5.4" />
     <PackageReference Include="ProjectDefaults" Version="1.0.78" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
     <PackageReference Include="Nullable" Version="1.3.0" PrivateAssets="all" />
