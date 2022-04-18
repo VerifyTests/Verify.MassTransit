@@ -55,8 +55,6 @@ public class SagaStateMachineTests
         {
             InstanceState(x => x.CurrentState);
 
-            Event(() => StartEvent, x => x.CorrelateById(context => context.Message.CorrelationId));
-
             Initially(
                 When(StartEvent)
                     .Then(context =>
