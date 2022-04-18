@@ -1,0 +1,226 @@
+﻿{
+  harness: {
+    InactivityTask: {
+      Result: true,
+      Id: Id_1,
+      Status: RanToCompletion,
+      IsCompleted: true,
+      IsCompletedSuccessfully: true,
+      CreationOptions: RunContinuationsAsynchronously
+    },
+    Consumed: [
+      {
+        Received: SagaStateMachineTests.Start,
+        MessageId: Guid_1,
+        ConversationId: Guid_2,
+        DestinationAddress: Tests:SagaStateMachineTests+Start,
+        Message: {
+          CorrelationId: Guid_3
+        }
+      }
+    ],
+    Published: [
+      {
+        Published: SagaStateMachineTests.Start,
+        MessageId: Guid_1,
+        ConversationId: Guid_2,
+        DestinationAddress: Tests:SagaStateMachineTests+Start,
+        Message: {
+          CorrelationId: Guid_3
+        }
+      }
+    ],
+    Sent: [],
+    Scope: {},
+    EndpointNameFormatter: {
+      Separator: 
+    },
+    Bus: {
+      Topology: {
+        PublishTopology: {},
+        SendTopology: {}
+      }
+    },
+    TestTimeout: 00:00:30,
+    TestInactivityTimeout: 00:00:01.2000000,
+    InactivityToken: {
+      IsCancellationRequested: true,
+      CanBeCanceled: true,
+      WaitHandle: {
+        SafeWaitHandle: {}
+      }
+    },
+    CancellationToken: {
+      CanBeCanceled: true,
+      WaitHandle: {
+        SafeWaitHandle: {}
+      }
+    }
+  },
+  sagaHarness: {
+    Consumed: [
+      {
+        Received: SagaStateMachineTests.Start,
+        MessageId: Guid_1,
+        ConversationId: Guid_2,
+        DestinationAddress: Tests:SagaStateMachineTests+Start,
+        Message: {
+          CorrelationId: Guid_3
+        }
+      }
+    ],
+    Sagas: [
+      {
+        Saga: {
+          CorrelationId: Guid_3,
+          CurrentState: Final,
+          StartMessageReceived: true
+        },
+        ElementId: Guid_3
+      }
+    ],
+    Created: [
+      {
+        Saga: {
+          CorrelationId: Guid_3,
+          CurrentState: Final,
+          StartMessageReceived: true
+        },
+        ElementId: Guid_3
+      }
+    ],
+    StateMachine: {
+      StartEvent: {
+        Name: StartEvent
+      },
+      Started: {
+        Name: Started,
+        Enter: {
+          Name: Started.Enter
+        },
+        Leave: {
+          Name: Started.Leave
+        },
+        BeforeEnter: {
+          Name: Started.BeforeEnter
+        },
+        AfterLeave: {
+          Name: Started.AfterLeave
+        },
+        Events: []
+      },
+      Correlations: [
+        {
+          ConfigureConsumeTopology: true,
+          FilterFactory: {
+            Type: SagaFilterFactory<SagaStateMachineTests.ConsumerSaga, SagaStateMachineTests.Start>,
+            Target: MassTransitEventCorrelationConfigurator<SagaStateMachineTests.ConsumerSaga, SagaStateMachineTests.Start>.<>c,
+            Method: MassTransit.IFilter`1[MassTransit.ConsumeContext`1[Tests.SagaStateMachineTests+Start]] CorrelateById(MassTransit.ISagaRepository`1[Tests.SagaStateMachineTests+ConsumerSaga], MassTransit.ISagaPolicy`2[Tests.SagaStateMachineTests+ConsumerSaga,Tests.SagaStateMachineTests+Start], MassTransit.IPipe`1[MassTransit.SagaConsumeContext`2[Tests.SagaStateMachineTests+ConsumerSaga,Tests.SagaStateMachineTests+Start]])
+          },
+          Event: {
+            Name: StartEvent
+          },
+          DataType: SagaStateMachineTests.Start,
+          MessageFilter: {},
+          Policy: {}
+        }
+      ],
+      Accessor: {},
+      Initial: {
+        Name: Initial,
+        Enter: {
+          Name: Initial.Enter
+        },
+        Leave: {
+          Name: Initial.Leave
+        },
+        BeforeEnter: {
+          Name: Initial.BeforeEnter
+        },
+        AfterLeave: {
+          Name: Initial.AfterLeave
+        },
+        Events: [
+          {
+            Name: StartEvent
+          }
+        ]
+      },
+      Final: {
+        Name: Final,
+        Enter: {
+          Name: Final.Enter
+        },
+        Leave: {
+          Name: Final.Leave
+        },
+        BeforeEnter: {
+          Name: Final.BeforeEnter
+        },
+        AfterLeave: {
+          Name: Final.AfterLeave
+        },
+        Events: []
+      },
+      States: [
+        {
+          Name: Initial,
+          Enter: {
+            Name: Initial.Enter
+          },
+          Leave: {
+            Name: Initial.Leave
+          },
+          BeforeEnter: {
+            Name: Initial.BeforeEnter
+          },
+          AfterLeave: {
+            Name: Initial.AfterLeave
+          },
+          Events: [
+            {
+              Name: StartEvent
+            }
+          ]
+        },
+        {
+          Name: Final,
+          Enter: {
+            Name: Final.Enter
+          },
+          Leave: {
+            Name: Final.Leave
+          },
+          BeforeEnter: {
+            Name: Final.BeforeEnter
+          },
+          AfterLeave: {
+            Name: Final.AfterLeave
+          },
+          Events: []
+        },
+        {
+          Name: Started,
+          Enter: {
+            Name: Started.Enter
+          },
+          Leave: {
+            Name: Started.Leave
+          },
+          BeforeEnter: {
+            Name: Started.BeforeEnter
+          },
+          AfterLeave: {
+            Name: Started.AfterLeave
+          },
+          Events: []
+        }
+      ],
+      Events: [
+        {
+          Name: StartEvent
+        }
+      ]
+    }
+  }
+}
