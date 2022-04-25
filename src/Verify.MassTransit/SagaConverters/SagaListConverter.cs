@@ -8,7 +8,7 @@ class SagaListConverter :
     static MethodInfo writeGenericMethod;
 
     static SagaListConverter() =>
-        writeGenericMethod = typeof(SagaListConverter).GetMethod("WriteGeneric");
+        writeGenericMethod = typeof(SagaListConverter).GetMethod("WriteGeneric")!;
 
     public override void Write(VerifyJsonWriter writer, object sagas)
     {
