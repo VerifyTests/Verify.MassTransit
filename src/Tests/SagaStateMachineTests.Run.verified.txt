@@ -1,14 +1,15 @@
 ﻿{
   harness: {
-    InactivityTask: {
-      Result: true,
-      Id: Id_1,
-      Status: RanToCompletion,
-      IsCompleted: true,
-      IsCompletedSuccessfully: true,
-      CreationOptions: RunContinuationsAsynchronously
-    },
-    Consumed: [
+    Messages: [
+      {
+        Published: SagaStateMachineTests.Start,
+        MessageId: Guid_1,
+        ConversationId: Guid_2,
+        DestinationAddress: Tests:SagaStateMachineTests+Start,
+        Message: {
+          CorrelationId: Guid_3
+        }
+      },
       {
         Received: SagaStateMachineTests.Start,
         MessageId: Guid_1,
@@ -18,44 +19,7 @@
           CorrelationId: Guid_3
         }
       }
-    ],
-    Published: [
-      {
-        Published: SagaStateMachineTests.Start,
-        MessageId: Guid_1,
-        ConversationId: Guid_2,
-        DestinationAddress: Tests:SagaStateMachineTests+Start,
-        Message: {
-          CorrelationId: Guid_3
-        }
-      }
-    ],
-    Sent: [],
-    Scope: {},
-    EndpointNameFormatter: {
-      Separator: 
-    },
-    Bus: {
-      Topology: {
-        PublishTopology: {},
-        SendTopology: {}
-      }
-    },
-    TestTimeout: 00:00:30,
-    TestInactivityTimeout: 00:00:01.2000000,
-    InactivityToken: {
-      IsCancellationRequested: true,
-      CanBeCanceled: true,
-      WaitHandle: {
-        SafeWaitHandle: {}
-      }
-    },
-    CancellationToken: {
-      CanBeCanceled: true,
-      WaitHandle: {
-        SafeWaitHandle: {}
-      }
-    }
+    ]
   },
   sagaHarness: {
     Consumed: [

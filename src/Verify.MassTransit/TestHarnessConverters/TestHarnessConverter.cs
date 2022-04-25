@@ -1,9 +1,9 @@
 ﻿using MassTransit.Testing;
 
 class TestHarnessConverter :
-    WriteOnlyJsonConverter<BusTestHarness>
+    WriteOnlyJsonConverter<IBaseTestHarness>
 {
-    public override void Write(VerifyJsonWriter writer, BusTestHarness harness)
+    public override void Write(VerifyJsonWriter writer, IBaseTestHarness harness)
     {
         var messages = new Dictionary<DateTime, IAsyncListElement>();
 
