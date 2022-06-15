@@ -86,7 +86,9 @@
           },
           DataType: SagaStateMachineTests.Start,
           MessageFilter: {},
-          Policy: {}
+          Policy: {
+            IsReadOnly: false
+          }
         }
       ],
       Accessor: {},
