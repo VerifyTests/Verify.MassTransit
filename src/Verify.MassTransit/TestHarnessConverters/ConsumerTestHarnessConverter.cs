@@ -7,7 +7,7 @@ class ConsumerTestHarnessConverter :
     {
         var value = harness.GetType().GetProperty("Consumed").GetValue(harness);
         writer.WriteStartObject();
-        writer.WriteProperty(harness, value, "Consumed");
+        writer.WriteMember(harness, value, "Consumed");
         writer.WriteEndObject();
     }
 

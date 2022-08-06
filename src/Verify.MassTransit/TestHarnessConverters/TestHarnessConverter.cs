@@ -30,7 +30,7 @@ class TestHarnessConverter :
             .OrderBy(x => x.Key)
             .Select(x => x.Value);
         writer.WriteStartObject();
-        writer.WriteProperty(harness, orderedMessages, "Messages");
+        writer.WriteMember(harness, orderedMessages, "Messages");
         writer.WriteEndObject();
     }
 }
