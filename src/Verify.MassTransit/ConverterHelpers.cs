@@ -6,7 +6,7 @@ static class ConverterHelpers
     {
         if (headers.Any())
         {
-            writer.WriteProperty(context, headers, "Headers");
+            writer.WriteMember(context, headers, "Headers");
         }
     }
 

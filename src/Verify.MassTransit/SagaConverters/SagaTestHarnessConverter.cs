@@ -26,8 +26,8 @@ class SagaTestHarnessConverter :
     static void InnerWrite<T>(VerifyJsonWriter writer, SagaTestHarness<T> harness)
         where T : class, ISaga
     {
-        writer.WriteProperty(harness, harness.Consumed, "Consumed");
-        writer.WriteProperty(harness, harness.Sagas, "Sagas");
+        writer.WriteMember(harness, harness.Consumed, "Consumed");
+        writer.WriteMember(harness, harness.Sagas, "Sagas");
     }
 
     public override bool CanConvert(Type type) =>

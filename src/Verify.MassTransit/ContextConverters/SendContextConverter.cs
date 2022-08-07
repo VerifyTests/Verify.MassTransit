@@ -6,19 +6,19 @@ class SendContextConverter :
     public override void Write(VerifyJsonWriter writer, SendContext context)
     {
         writer.WriteStartObject();
-        writer.WriteProperty(context, context.DestinationAddress.Suffix(), "DestinationAddress");
-        writer.WriteProperty(context, context.ResponseAddress.Suffix(), "ResponseAddress");
-        writer.WriteProperty(context, context.RequestId, "RequestId");
-        writer.WriteProperty(context, context.MessageId, "MessageId");
-        writer.WriteProperty(context, context.ConversationId, "ConversationId");
-        writer.WriteProperty(context, context.InitiatorId, "InitiatorId");
-        writer.WriteProperty(context, context.ScheduledMessageId, "ScheduledMessageId");
+        writer.WriteMember(context, context.DestinationAddress.Suffix(), "DestinationAddress");
+        writer.WriteMember(context, context.ResponseAddress.Suffix(), "ResponseAddress");
+        writer.WriteMember(context, context.RequestId, "RequestId");
+        writer.WriteMember(context, context.MessageId, "MessageId");
+        writer.WriteMember(context, context.ConversationId, "ConversationId");
+        writer.WriteMember(context, context.InitiatorId, "InitiatorId");
+        writer.WriteMember(context, context.ScheduledMessageId, "ScheduledMessageId");
         writer.WriteHeaders(context, context.Headers);
-        writer.WriteProperty(context, context.TimeToLive, "TimeToLive");
-        writer.WriteProperty(context, context.ContentType?.MediaType, "ContentType");
+        writer.WriteMember(context, context.TimeToLive, "TimeToLive");
+        writer.WriteMember(context, context.ContentType?.MediaType, "ContentType");
         if (!context.Durable)
         {
-            writer.WriteProperty(context, context.Durable, "Durable");
+            writer.WriteMember(context, context.Durable, "Durable");
         }
         writer.WriteEndObject();
     }

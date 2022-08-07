@@ -6,16 +6,16 @@ class ReceivedMessageConverter :
     public override void Write(VerifyJsonWriter writer, IReceivedMessage message)
     {
         writer.WriteStartObject();
-        writer.WriteProperty(message, message.MessageType, "Received");
+        writer.WriteMember(message, message.MessageType, "Received");
         var context = message.Context;
-        writer.WriteProperty(context, context.MessageId, "MessageId");
-        writer.WriteProperty(context, context.ConversationId, "ConversationId");
-        writer.WriteProperty(context, context.DestinationAddress.Suffix(), "DestinationAddress");
-        writer.WriteProperty(message, message.MessageObject, "Message");
+        writer.WriteMember(context, context.MessageId, "MessageId");
+        writer.WriteMember(context, context.ConversationId, "ConversationId");
+        writer.WriteMember(context, context.DestinationAddress.Suffix(), "DestinationAddress");
+        writer.WriteMember(message, message.MessageObject, "Message");
         writer.WriteHeaders(context, context.Headers);
         if (message.Exception != null)
         {
-            writer.WriteProperty(message, message.Exception, "Exception");
+            writer.WriteMember(message, message.Exception, "Exception");
         }
 
         writer.WriteEndObject();
