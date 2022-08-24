@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MassTransit" Version="8.0.5" />
+    <PackageReference Include="MassTransit" Version="8.0.6" />
     <PackageReference Include="SimpleInfoName" Version="1.1.1" />
     <PackageReference Include="Verify" Version="18.0.0-beta.3" />
     <PackageReference Include="ProjectDefaults" Version="1.0.80" PrivateAssets="all" />
