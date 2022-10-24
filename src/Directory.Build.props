@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
-    <Version>2.0.0-beta.3</Version>
+    <Version>2.0.0</Version>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <PackageTags>MassTransit, Verify</PackageTags>
     <Description>Adds Verify (https://github.com/VerifyTests/Verify) support to verify MassTransit test helpers (https://masstransit-project.com/usage/testing.html).</Description>
