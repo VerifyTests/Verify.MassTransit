@@ -3,12 +3,12 @@
     #region enable
 
     [ModuleInitializer]
-    public static void Initialize()
-    {
+    public static void Initialize() =>
         VerifyMassTransit.Enable();
 
-        #endregion
+    #endregion
 
+    [ModuleInitializer]
+    public static void InitializeOther() =>
         VerifyDiffPlex.Initialize();
-    }
 }
