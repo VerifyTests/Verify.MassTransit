@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageReference Include="Argon" Version="0.5.0" />
     <PackageReference Include="MassTransit" Version="8.0.13" />
-    <PackageReference Include="SimpleInfoName" Version="2.1.0" />
+    <PackageReference Include="SimpleInfoName" Version="2.1.1" />
     <PackageReference Include="Verify" Version="19.11.1" />
     <PackageReference Include="Verify.DiffPlex" Version="2.2.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.90" PrivateAssets="all" />
