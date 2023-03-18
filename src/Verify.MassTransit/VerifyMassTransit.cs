@@ -39,21 +39,22 @@ public static class VerifyMassTransit
 
     internal static bool CanConvertToGeneric(this Type from, Type to)
     {
+        Type? current = from;
         do
         {
-            if (!from.IsGenericType)
+            if (!current.IsGenericType)
             {
                 return false;
             }
 
-            var definition = from.GetGenericTypeDefinition();
+            var definition = current.GetGenericTypeDefinition();
             if (definition == to)
             {
                 return true;
             }
 
-            from = from.BaseType;
-        } while (from != null);
+            current = current.BaseType;
+        } while (current != null);
 
         return false;
     }

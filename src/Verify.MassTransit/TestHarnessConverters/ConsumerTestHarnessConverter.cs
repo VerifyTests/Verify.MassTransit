@@ -5,7 +5,7 @@ class ConsumerTestHarnessConverter :
 {
     public override void Write(VerifyJsonWriter writer, object harness)
     {
-        var value = harness.GetType().GetProperty("Consumed").GetValue(harness);
+        var value = harness.GetType().GetProperty("Consumed")!.GetValue(harness);
         writer.WriteStartObject();
         writer.WriteMember(harness, value, "Consumed");
         writer.WriteEndObject();

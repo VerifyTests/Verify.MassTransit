@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Argon" Version="0.5.0" />
-    <PackageReference Include="MassTransit" Version="8.0.13" />
+    <PackageReference Include="MassTransit" Version="8.0.14" />
     <PackageReference Include="SimpleInfoName" Version="2.1.1" />
     <PackageReference Include="Verify" Version="19.11.1" />
     <PackageReference Include="Verify.DiffPlex" Version="2.2.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.90" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
-    <PackageReference Include="Polyfill" Version="0.14.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
