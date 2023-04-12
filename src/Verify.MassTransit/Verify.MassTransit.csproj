@@ -7,7 +7,7 @@
     <PackageReference Include="Argon" Version="0.5.2" />
     <PackageReference Include="MassTransit" Version="8.0.14" />
     <PackageReference Include="SimpleInfoName" Version="2.1.1" />
-    <PackageReference Include="Verify" Version="19.12.1" />
+    <PackageReference Include="Verify" Version="19.12.2" />
     <PackageReference Include="Verify.DiffPlex" Version="2.2.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.90" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
