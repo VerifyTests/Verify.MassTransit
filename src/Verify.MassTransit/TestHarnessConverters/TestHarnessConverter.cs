@@ -27,8 +27,8 @@ class TestHarnessConverter :
         }
 
         var orderedMessages = messages
-            .OrderBy(x => x.Key)
-            .Select(x => x.Value);
+            .OrderBy(_ => _.Key)
+            .Select(_ => _.Value);
         writer.WriteStartObject();
         writer.WriteMember(harness, orderedMessages, "Messages");
         writer.WriteEndObject();

@@ -55,7 +55,7 @@ public class SagaStateMachineTests
 
         public ConsumerStateMachine()
         {
-            InstanceState(x => x.CurrentState);
+            InstanceState(_ => _.CurrentState);
 
             Initially(
                 When(StartEvent)
