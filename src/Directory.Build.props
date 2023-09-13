@@ -3,6 +3,7 @@
   <PropertyGroup>
     <Version>2.1.0</Version>
     <AssemblyVersion>1.0.0</AssemblyVersion>
+    <LangVersion>preview</LangVersion>
     <PackageTags>MassTransit, Verify</PackageTags>
     <Description>Adds Verify (https://github.com/VerifyTests/Verify) support to verify MassTransit test helpers (https://masstransit-project.com/usage/testing.html).</Description>
     <NoWarn>CS1591;NU5105</NoWarn>
