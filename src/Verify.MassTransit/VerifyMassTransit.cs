@@ -4,10 +4,6 @@ public static class VerifyMassTransit
 {
     public static bool Initialized { get; private set; }
 
-    [Obsolete("Use Initialize()")]
-    public static void Enable() =>
-        Initialize();
-
     public static void Initialize()
     {
         if (Initialized)
