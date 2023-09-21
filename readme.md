@@ -6,6 +6,8 @@
 
 Adds [Verify](https://github.com/VerifyTests/Verify) support for [MassTransit test helpers](https://masstransit-project.com/usage/testing.html).
 
+**See [Milestones](../../milestones?state=closed) for release notes.**
+
 
 ## NuGet package
 
