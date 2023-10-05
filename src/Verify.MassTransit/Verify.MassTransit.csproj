@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Argon" Version="0.11.0" />
+    <PackageReference Include="Argon" Version="0.12.0" />
     <PackageReference Include="MassTransit" Version="8.1.1" />
     <PackageReference Include="SimpleInfoName" Version="2.1.1" />
     <PackageReference Include="Verify" Version="21.3.0" />
