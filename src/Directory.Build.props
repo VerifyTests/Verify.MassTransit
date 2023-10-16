@@ -9,6 +9,7 @@
     <NoWarn>CS1591;NU5105</NoWarn>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
   </PropertyGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileFullPath)\..\..\license.txt"
