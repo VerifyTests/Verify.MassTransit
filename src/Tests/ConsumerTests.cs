@@ -45,7 +45,7 @@ public class ConsumerTests
     [Fact]
     public async Task TestWithVerify()
     {
-        InMemoryTestHarness harness = new InMemoryTestHarness();
+        var harness = new InMemoryTestHarness();
         var consumer = harness.Consumer<SubmitOrderConsumer>();
 
         await harness.Start();
