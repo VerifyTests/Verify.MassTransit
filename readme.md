@@ -75,7 +75,7 @@ Using Verify, the TestHarness and any number of ConsumerHarness, can be passed t
 [Fact]
 public async Task TestWithVerify()
 {
-    InMemoryTestHarness harness = new InMemoryTestHarness();
+    var harness = new InMemoryTestHarness();
     var consumer = harness.Consumer<SubmitOrderConsumer>();
 
     await harness.Start();
