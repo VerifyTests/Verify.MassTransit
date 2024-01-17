@@ -64,7 +64,7 @@ public async Task TestWithAsserts()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTests.cs#L9-L41' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestasserts' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L8-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestasserts' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Using Verify, the TestHarness and any number of ConsumerHarness, can be passed to `Verify`.
@@ -96,7 +96,7 @@ public async Task TestWithVerify()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTests.cs#L43-L69' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestverify' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L42-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestverify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The above will result in the following snapshot file that will need to be [accepted](https://github.com/VerifyTests/Verify#snapshot-management).
@@ -206,7 +206,7 @@ public class Start : CorrelatedBy<Guid>
     public Guid CorrelationId { get; set; }
 }
 ```
-<sup><a href='/src/Tests/SagaTests.cs#L9-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-sagatests' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SagaTests.cs#L8-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-sagatests' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will result in the following snapshot file.
