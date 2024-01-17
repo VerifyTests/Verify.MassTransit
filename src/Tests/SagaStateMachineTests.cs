@@ -4,7 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Tests;
 
-[UsesVerify]
 public class SagaStateMachineTests
 {
     #region SagaStateMachineTests
