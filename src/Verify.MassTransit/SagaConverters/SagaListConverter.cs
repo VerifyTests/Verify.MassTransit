@@ -14,13 +14,10 @@ class SagaListConverter :
     {
         var sagaType = sagas.GetType().GetGenericArguments().Single();
         writeGenericMethod.MakeGenericMethod(sagaType)
-            .Invoke(this, new[]
-            {
-                writer, sagas
-            });
+            .Invoke(this, [writer, sagas]);
     }
 
-    public void WriteGeneric<T>(VerifyJsonWriter writer, ISagaList<T> sagas)
+    public static void WriteGeneric<T>(VerifyJsonWriter writer, ISagaList<T> sagas)
         where T : class, ISaga
     {
         writer.WriteStartArray();

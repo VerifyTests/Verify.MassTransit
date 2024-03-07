@@ -15,11 +15,7 @@ class SagaTestHarnessConverter :
         writer.WriteStartObject();
         var typeArguments = harness.GetType().GetGenericArguments().Single();
         var genericWrite = innerWriteDef.MakeGenericMethod(typeArguments);
-        genericWrite.Invoke(null, new[]
-        {
-            writer,
-            harness
-        });
+        genericWrite.Invoke(null, [writer, harness]);
         writer.WriteEndObject();
     }
 
