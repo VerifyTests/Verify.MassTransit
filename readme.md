@@ -32,7 +32,7 @@ public static void Initialize() =>
 Using traditional asserts consumer interactions can be tested as follows:
 
 <!-- snippet: ConsumerTestAsserts -->
-<a id='snippet-consumertestasserts'></a>
+<a id='snippet-ConsumerTestAsserts'></a>
 ```cs
 [Fact]
 public async Task TestWithAsserts()
@@ -64,13 +64,13 @@ public async Task TestWithAsserts()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTests.cs#L8-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestasserts' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L8-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestAsserts' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Using Verify, the TestHarness and any number of ConsumerHarness, can be passed to `Verify`.
 
 <!-- snippet: ConsumerTestVerify -->
-<a id='snippet-consumertestverify'></a>
+<a id='snippet-ConsumerTestVerify'></a>
 ```cs
 [Fact]
 public async Task TestWithVerify()
@@ -96,7 +96,7 @@ public async Task TestWithVerify()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTests.cs#L42-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-consumertestverify' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L42-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestVerify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The above will result in the following snapshot file that will need to be [accepted](https://github.com/VerifyTests/Verify#snapshot-management).
@@ -162,7 +162,7 @@ Moving forward, any change in the message interactions will result in a new snap
 The following Saga test:
 
 <!-- snippet: SagaTests -->
-<a id='snippet-sagatests'></a>
+<a id='snippet-SagaTests'></a>
 ```cs
 [Fact]
 public async Task Run()
@@ -206,7 +206,7 @@ public class Start : CorrelatedBy<Guid>
     public Guid CorrelationId { get; set; }
 }
 ```
-<sup><a href='/src/Tests/SagaTests.cs#L8-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-sagatests' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SagaTests.cs#L8-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-SagaTests' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will result in the following snapshot file.
