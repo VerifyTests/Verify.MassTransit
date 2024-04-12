@@ -78,7 +78,7 @@
           ConfigureConsumeTopology: true,
           FilterFactory: {
             Type: SagaFilterFactory<SagaStateMachineTests.ConsumerSaga, SagaStateMachineTests.Start>,
-            Target: MassTransitEventCorrelationConfigurator<SagaStateMachineTests.ConsumerSaga, SagaStateMachineTests.Start>.<>c,
+            Target: StateMachineInterfaceType<SagaStateMachineTests.ConsumerSaga, SagaStateMachineTests.Start>.MassTransitEventCorrelationConfigurator.<>c,
             Method: MassTransit.IFilter`1[MassTransit.ConsumeContext`1[Tests.SagaStateMachineTests+Start]] CorrelateById(MassTransit.ISagaRepository`1[Tests.SagaStateMachineTests+ConsumerSaga], MassTransit.ISagaPolicy`2[Tests.SagaStateMachineTests+ConsumerSaga,Tests.SagaStateMachineTests+Start], MassTransit.IPipe`1[MassTransit.SagaConsumeContext`2[Tests.SagaStateMachineTests+ConsumerSaga,Tests.SagaStateMachineTests+Start]])
           },
           Event: {
