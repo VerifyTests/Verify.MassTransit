@@ -1,7 +1,4 @@
-﻿using MassTransit;
-using MassTransit.Testing;
-
-namespace Tests;
+﻿namespace Tests;
 
 public class SagaTests
 {
@@ -9,7 +6,7 @@ public class SagaTests
     [Fact]
     public async Task Run()
     {
-        var harness = new InMemoryTestHarness();
+        using var harness = new InMemoryTestHarness();
         var sagaHarness = harness.Saga<ConsumerSaga>();
 
         var correlationId = NewId.NextGuid();

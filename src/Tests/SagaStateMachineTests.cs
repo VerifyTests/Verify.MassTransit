@@ -1,7 +1,3 @@
-using MassTransit;
-using MassTransit.Testing;
-using Microsoft.Extensions.DependencyInjection;
-
 namespace Tests;
 
 public class SagaStateMachineTests
@@ -13,10 +9,8 @@ public class SagaStateMachineTests
         // Based on https://masstransit-project.com/usage/testing.html#saga-state-machine
 
         await using var provider = new ServiceCollection()
-            .AddMassTransitTestHarness(cfg =>
-            {
-                cfg.AddSagaStateMachine<ConsumerStateMachine, ConsumerSaga>();
-            })
+            .AddMassTransitTestHarness(_ =>
+                _.AddSagaStateMachine<ConsumerStateMachine, ConsumerSaga>())
             .BuildServiceProvider(true);
         var harness = provider.GetRequiredService<ITestHarness>();
         var sagaHarness = harness.GetSagaStateMachineHarness<ConsumerStateMachine, ConsumerSaga>();
@@ -25,9 +19,18 @@ public class SagaStateMachineTests
 
         await harness.Start();
 
-        await harness.Bus.Publish(new Start { CorrelationId = correlationId });
+        await harness.Bus.Publish(
+            new Start
+            {
+                CorrelationId = correlationId
+            });
 
-        await Verify(new { harness, sagaHarness });
+        await Verify(
+            new
+            {
+                harness,
+                sagaHarness
+            });
     }
 
     public class ConsumerSaga :

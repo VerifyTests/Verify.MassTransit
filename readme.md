@@ -37,7 +37,7 @@ Using traditional asserts consumer interactions can be tested as follows:
 [Fact]
 public async Task TestWithAsserts()
 {
-    var harness = new InMemoryTestHarness();
+    using var harness = new InMemoryTestHarness();
     var consumerHarness = harness.Consumer<SubmitOrderConsumer>();
 
     await harness.Start();
@@ -64,7 +64,7 @@ public async Task TestWithAsserts()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTests.cs#L8-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestAsserts' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L5-L37' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestAsserts' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Using Verify, the TestHarness and any number of ConsumerHarness, can be passed to `Verify`.
@@ -75,7 +75,7 @@ Using Verify, the TestHarness and any number of ConsumerHarness, can be passed t
 [Fact]
 public async Task TestWithVerify()
 {
-    var harness = new InMemoryTestHarness();
+    using var harness = new InMemoryTestHarness();
     var consumer = harness.Consumer<SubmitOrderConsumer>();
 
     await harness.Start();
@@ -96,7 +96,7 @@ public async Task TestWithVerify()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTests.cs#L42-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestVerify' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L39-L65' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestVerify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The above will result in the following snapshot file that will need to be [accepted](https://github.com/VerifyTests/Verify#snapshot-management).
@@ -167,7 +167,7 @@ The following Saga test:
 [Fact]
 public async Task Run()
 {
-    var harness = new InMemoryTestHarness();
+    using var harness = new InMemoryTestHarness();
     var sagaHarness = harness.Saga<ConsumerSaga>();
 
     var correlationId = NewId.NextGuid();
@@ -206,7 +206,7 @@ public class Start : CorrelatedBy<Guid>
     public Guid CorrelationId { get; set; }
 }
 ```
-<sup><a href='/src/Tests/SagaTests.cs#L8-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-SagaTests' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SagaTests.cs#L5-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-SagaTests' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will result in the following snapshot file.

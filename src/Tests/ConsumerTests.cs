@@ -1,7 +1,4 @@
-﻿using MassTransit;
-using MassTransit.Testing;
-
-namespace Tests;
+﻿namespace Tests;
 
 public class ConsumerTests
 {
@@ -10,7 +7,7 @@ public class ConsumerTests
     [Fact]
     public async Task TestWithAsserts()
     {
-        var harness = new InMemoryTestHarness();
+        using var harness = new InMemoryTestHarness();
         var consumerHarness = harness.Consumer<SubmitOrderConsumer>();
 
         await harness.Start();
@@ -44,7 +41,7 @@ public class ConsumerTests
     [Fact]
     public async Task TestWithVerify()
     {
-        var harness = new InMemoryTestHarness();
+        using var harness = new InMemoryTestHarness();
         var consumer = harness.Consumer<SubmitOrderConsumer>();
 
         await harness.Start();
