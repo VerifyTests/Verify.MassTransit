@@ -13,11 +13,12 @@ public class ConsumerTests
         await harness.Start();
         try
         {
-            await harness.InputQueueSendEndpoint.Send<SubmitOrder>(
-                new
-                {
-                    OrderId = InVar.Id
-                });
+            await harness.InputQueueSendEndpoint
+                .Send(
+                    new SubmitOrder
+                    {
+                        OrderId = InVar.Id
+                    });
 
             // did the endpoint consume the message
             Assert.True(await harness.Consumed.Any<SubmitOrder>());
@@ -48,13 +49,17 @@ public class ConsumerTests
         try
         {
             await harness.InputQueueSendEndpoint
-                .Send<SubmitOrder>(
-                    new
+                .Send(
+                    new SubmitOrder
                     {
                         OrderId = InVar.Id
                     });
 
-            await Verify(new {harness, consumer});
+            await Verify(new
+            {
+                harness,
+                consumer
+            });
         }
         finally
         {
@@ -64,24 +69,24 @@ public class ConsumerTests
 
     #endregion
 
-    public interface SubmitOrder
+    public class SubmitOrder
     {
-        Guid OrderId { get; }
+        public Guid OrderId { get; init; }
     }
 
-    public interface OrderSubmitted
+    public class OrderSubmitted
     {
-        Guid OrderId { get; }
+        public Guid OrderId { get; init; }
     }
 
     class SubmitOrderConsumer :
         IConsumer<SubmitOrder>
     {
         public Task Consume(ConsumeContext<SubmitOrder> context) =>
-            context.Publish<OrderSubmitted>(
-                new
+            context.Publish(
+                new OrderSubmitted
                 {
-                    context.Message.OrderId
+                    OrderId = context.Message.OrderId
                 });
     }
 }

@@ -15,14 +15,12 @@ public class SagaStateMachineTests
         var harness = provider.GetRequiredService<ITestHarness>();
         var sagaHarness = harness.GetSagaStateMachineHarness<ConsumerStateMachine, ConsumerSaga>();
 
-        var correlationId = NewId.NextGuid();
-
         await harness.Start();
 
         await harness.Bus.Publish(
             new Start
             {
-                CorrelationId = correlationId
+                CorrelationId = NewId.NextGuid()
             });
 
         await Verify(
@@ -45,13 +43,13 @@ public class SagaStateMachineTests
     public class Start :
         CorrelatedBy<Guid>
     {
-        public Guid CorrelationId { get; set; }
+        public Guid CorrelationId { get; init; }
     }
 
     public class ConsumerStateMachine :
         MassTransitStateMachine<ConsumerSaga>
     {
-        public Event<Start>? StartEvent { get; set; }
+        public Event<Start>? StartEvent { get; init; }
 
         public State? Started { get; set; }
 
@@ -61,10 +59,7 @@ public class SagaStateMachineTests
 
             Initially(
                 When(StartEvent)
-                    .Then(context =>
-                    {
-                        context.Saga.StartMessageReceived = true;
-                    })
+                    .Then(_ => _.Saga.StartMessageReceived = true)
                     .Finalize());
 
             SetCompletedWhenFinalized();

@@ -43,11 +43,12 @@ public async Task TestWithAsserts()
     await harness.Start();
     try
     {
-        await harness.InputQueueSendEndpoint.Send<SubmitOrder>(
-            new
-            {
-                OrderId = InVar.Id
-            });
+        await harness.InputQueueSendEndpoint
+            .Send(
+                new SubmitOrder
+                {
+                    OrderId = InVar.Id
+                });
 
         // did the endpoint consume the message
         Assert.True(await harness.Consumed.Any<SubmitOrder>());
@@ -64,7 +65,7 @@ public async Task TestWithAsserts()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTests.cs#L5-L37' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestAsserts' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L5-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestAsserts' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Using Verify, the TestHarness and any number of ConsumerHarness, can be passed to `Verify`.
@@ -82,13 +83,17 @@ public async Task TestWithVerify()
     try
     {
         await harness.InputQueueSendEndpoint
-            .Send<SubmitOrder>(
-                new
+            .Send(
+                new SubmitOrder
                 {
                     OrderId = InVar.Id
                 });
 
-        await Verify(new {harness, consumer});
+        await Verify(new
+        {
+            harness,
+            consumer
+        });
     }
     finally
     {
@@ -96,7 +101,7 @@ public async Task TestWithVerify()
     }
 }
 ```
-<sup><a href='/src/Tests/ConsumerTests.cs#L39-L65' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestVerify' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ConsumerTests.cs#L40-L70' title='Snippet source file'>snippet source</a> | <a href='#snippet-ConsumerTestVerify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The above will result in the following snapshot file that will need to be [accepted](https://github.com/VerifyTests/Verify#snapshot-management).
@@ -203,7 +208,7 @@ public class ConsumerSaga :
 
 public class Start : CorrelatedBy<Guid>
 {
-    public Guid CorrelationId { get; set; }
+    public Guid CorrelationId { get; init; }
 }
 ```
 <sup><a href='/src/Tests/SagaTests.cs#L5-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-SagaTests' title='Start of snippet'>anchor</a></sup>

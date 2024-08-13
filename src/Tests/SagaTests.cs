@@ -42,7 +42,7 @@ public class SagaTests
 
     public class Start : CorrelatedBy<Guid>
     {
-        public Guid CorrelationId { get; set; }
+        public Guid CorrelationId { get; init; }
     }
     #endregion
 }
