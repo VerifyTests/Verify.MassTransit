@@ -7,7 +7,6 @@
     <PackageTags>MassTransit, Verify</PackageTags>
     <Description>Adds Verify (https://github.com/VerifyTests/Verify) support to verify MassTransit test helpers (https://masstransit-project.com/usage/testing.html).</Description>
     <NoWarn>CS1591;NU5105</NoWarn>
-    <PackageLicenseFile>license.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
     <NuGetAuditMode>all</NuGetAuditMode>
@@ -15,9 +14,4 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileFullPath)\..\..\license.txt"
-          Pack="true"
-          PackagePath="license.txt"/>
-  </ItemGroup>
 </Project>
