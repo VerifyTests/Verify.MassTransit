@@ -6,7 +6,7 @@
     <LangVersion>preview</LangVersion>
     <PackageTags>MassTransit, Verify</PackageTags>
     <Description>Adds Verify (https://github.com/VerifyTests/Verify) support to verify MassTransit test helpers (https://masstransit-project.com/usage/testing.html).</Description>
-    <NoWarn>CS1591;NU5105</NoWarn>
+    <NoWarn>CS1591;NU5105;NU1608;NU1109</NoWarn>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
