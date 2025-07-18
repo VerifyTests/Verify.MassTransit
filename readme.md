@@ -4,7 +4,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/6quuecxv8hh0snd3/branch/main?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-MassTransit)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.MassTransit.svg)](https://www.nuget.org/packages/Verify.MassTransit/)
 
-Adds [Verify](https://github.com/VerifyTests/Verify) support for [MassTransit test helpers](https://masstransit-project.com/usage/testing.html).
+Adds [Verify](https://github.com/VerifyTests/Verify) support for [MassTransit test helpers](https://masstransit-project.com/usage/testing.html).<!-- singleLineInclude: intro. path: /docs/intro.include.md -->
 
 **See [Milestones](../../milestones?state=closed) for release notes.**
 
@@ -14,9 +14,9 @@ Adds [Verify](https://github.com/VerifyTests/Verify) support for [MassTransit te
 
 ### Entity Framework Extensions<!-- include: zzz. path: /docs/zzz.include.md -->
 
-[Entity Framework Extensions](https://entityframework-extensions.net/) is a major sponsor and is proud to contribute to the development this project.
+[Entity Framework Extensions](https://entityframework-extensions.net/?utm_source=simoncropp&utm_medium=Verify.MassTransit) is a major sponsor and is proud to contribute to the development this project.
 
-[![Entity Framework Extensions](docs/zzz.png)](https://entityframework-extensions.net)<!-- endInclude -->
+[![Entity Framework Extensions](https://raw.githubusercontent.com/VerifyTests/Verify.MassTrans/refs/heads/main/docs/zzz.png)](https://entityframework-extensions.net/?utm_source=simoncropp&utm_medium=Verify.MassTransit)<!-- endInclude -->
 
 
 ## NuGet

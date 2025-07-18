@@ -1,0 +1,1 @@
+Adds [Verify](https://github.com/VerifyTests/Verify) support for [MassTransit test helpers](https://masstransit-project.com/usage/testing.html).
