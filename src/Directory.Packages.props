@@ -8,7 +8,7 @@
     <PackageVersion Include="MassTransit" Version="8.5.1" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.8" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
-    <PackageVersion Include="ProjectDefaults" Version="1.0.156" />
+    <PackageVersion Include="ProjectDefaults" Version="1.0.157" />
     <PackageVersion Include="Verify" Version="30.6.0" />
     <PackageVersion Include="Verify.XunitV3" Version="30.6.0" />
     <PackageVersion Include="xunit.v3" Version="3.0.0" />
