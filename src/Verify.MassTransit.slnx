@@ -1,5 +1,6 @@
-<Solution>
+﻿<Solution>
   <Folder Name="/Solution Items/">
+    <File Path="../.gitattributes" />
     <File Path="../docs/intro.include.md" />
     <File Path="../docs/zzz.include.md" />
     <File Path="../readme.md" />
