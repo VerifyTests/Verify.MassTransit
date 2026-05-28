@@ -8,11 +8,17 @@ class SentMessageConverter :
         writer.WriteStartObject();
         writer.WriteMember(message, message.MessageType, "Sent");
         var context = message.Context;
-        writer.WriteMember(context, context.MessageId, "MessageId");
-        writer.WriteMember(context, context.ConversationId, "ConversationId");
-        writer.WriteMember(context, context.DestinationAddress.Suffix(), "DestinationAddress");
+        if (context != null)
+        {
+            writer.WriteMember(context, context.MessageId, "MessageId");
+            writer.WriteMember(context, context.ConversationId, "ConversationId");
+            writer.WriteMember(context, context.DestinationAddress.Suffix(), "DestinationAddress");
+        }
         writer.WriteMember(message, message.MessageObject, "Message");
-        writer.WriteHeaders(context, context.Headers);
+        if (context != null)
+        {
+            writer.WriteHeaders(context, context.Headers);
+        }
         if (message.Exception != null)
         {
             writer.WriteMember(message, message.Exception, "Exception");

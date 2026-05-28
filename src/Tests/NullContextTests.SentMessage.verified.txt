@@ -1,0 +1,6 @@
+﻿{
+  Sent: NullContextTests.Sample,
+  Message: {
+    Value: abc
+  }
+}
