@@ -1,6 +1,4 @@
-﻿using MassTransit;
-
-class MessageContextConverter :
+﻿class MessageContextConverter :
     WriteOnlyJsonConverter<MessageContext>
 {
     public override void Write(VerifyJsonWriter writer, MessageContext context)

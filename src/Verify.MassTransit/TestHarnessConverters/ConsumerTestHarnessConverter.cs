@@ -1,6 +1,4 @@
-﻿using MassTransit.Testing;
-
-class ConsumerTestHarnessConverter :
+﻿class ConsumerTestHarnessConverter :
     WriteOnlyJsonConverter
 {
     public override void Write(VerifyJsonWriter writer, object harness)

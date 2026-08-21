@@ -1,6 +1,4 @@
-﻿using MassTransit;
-using MassTransit.Testing;
-using MassTransit.Testing.Implementations;
+﻿using MassTransit.Testing.Implementations;
 
 class SagaListConverter :
     WriteOnlyJsonConverter

@@ -276,11 +276,20 @@ Will result in the following snapshot file.
         },
         ElementId: Guid_3
       }
+    ],
+    Created: [
+      {
+        Saga: {
+          CorrelationId: Guid_3,
+          StartMessageReceived: true
+        },
+        ElementId: Guid_3
+      }
     ]
   }
 }
 ```
-<sup><a href='/src/Tests/SagaTests.Run.verified.txt#L1-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-SagaTests.Run.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/SagaTests.Run.verified.txt#L1-L55' title='Snippet source file'>snippet source</a> | <a href='#snippet-SagaTests.Run.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

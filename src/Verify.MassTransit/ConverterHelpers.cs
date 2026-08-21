@@ -1,6 +1,4 @@
-﻿using MassTransit;
-
-static class ConverterHelpers
+﻿static class ConverterHelpers
 {
     public static void WriteHeaders(this VerifyJsonWriter writer, object context, Headers headers)
     {

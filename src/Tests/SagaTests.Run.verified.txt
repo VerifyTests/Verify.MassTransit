@@ -41,6 +41,15 @@
         },
         ElementId: Guid_3
       }
+    ],
+    Created: [
+      {
+        Saga: {
+          CorrelationId: Guid_3,
+          StartMessageReceived: true
+        },
+        ElementId: Guid_3
+      }
     ]
   }
 }

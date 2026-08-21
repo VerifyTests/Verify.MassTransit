@@ -1,7 +1,4 @@
-﻿using MassTransit;
-using MassTransit.Testing;
-
-class SagaTestHarnessConverter :
+﻿class SagaTestHarnessConverter :
     WriteOnlyJsonConverter
 {
     static MethodInfo innerWriteDef;
@@ -24,6 +21,7 @@ class SagaTestHarnessConverter :
     {
         writer.WriteMember(harness, harness.Consumed, "Consumed");
         writer.WriteMember(harness, harness.Sagas, "Sagas");
+        writer.WriteMember(harness, harness.Created, "Created");
     }
 
     public override bool CanConvert(Type type) =>
