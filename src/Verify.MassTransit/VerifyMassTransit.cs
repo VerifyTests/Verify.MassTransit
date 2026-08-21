@@ -25,8 +25,13 @@ public static class VerifyMassTransit
             converters.Add(new SentMessageListConverter());
             converters.Add(new PublishedMessageConverter());
             converters.Add(new PublishedMessageListConverter());
+            converters.Add(new SagaStateMachineTestHarnessConverter());
             converters.Add(new SagaTestHarnessConverter());
             converters.Add(new SagaListConverter());
+            converters.Add(new ReceivedEventConverter());
+            converters.Add(new ReceivedEventListConverter());
+            converters.Add(new StateChangeConverter());
+            converters.Add(new StateChangeListConverter());
             converters.Add(new MessageContextConverter());
             converters.Add(new SendContextConverter());
             converters.Add(new ReceiveContextConverter());

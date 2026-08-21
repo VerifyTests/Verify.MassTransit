@@ -1,6 +1,4 @@
-﻿using MassTransit.Testing;
-
-class PublishedMessageConverter :
+﻿class PublishedMessageConverter :
     WriteOnlyJsonConverter<IPublishedMessage>
 {
     public override void Write(VerifyJsonWriter writer, IPublishedMessage message)

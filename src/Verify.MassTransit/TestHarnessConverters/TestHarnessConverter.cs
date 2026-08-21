@@ -1,6 +1,4 @@
-﻿using MassTransit.Testing;
-
-class TestHarnessConverter :
+﻿class TestHarnessConverter :
     WriteOnlyJsonConverter<IBaseTestHarness>
 {
     public override void Write(VerifyJsonWriter writer, IBaseTestHarness harness)

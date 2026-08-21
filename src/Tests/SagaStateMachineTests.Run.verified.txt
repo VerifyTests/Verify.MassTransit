@@ -53,6 +53,29 @@
         ElementId: Guid_3
       }
     ],
+    Events: [
+      {
+        Event: StartEvent,
+        CorrelationId: Guid_3,
+        MessageType: SagaStateMachineTests.Start,
+        Message: {
+          CorrelationId: Guid_3
+        }
+      }
+    ],
+    StateChanges: [
+      {
+        Event: StartEvent,
+        CorrelationId: Guid_3,
+        CurrentState: Initial
+      },
+      {
+        Event: StartEvent,
+        CorrelationId: Guid_3,
+        PreviousState: Initial,
+        CurrentState: Final
+      }
+    ],
     StateMachine: {
       StartEvent: {
         Name: StartEvent
