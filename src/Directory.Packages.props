@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.5.0" />
-    <PackageVersion Include="MassTransit" Version="9.2.2" />
+    <PackageVersion Include="MassTransit" Version="9.2.3" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.12" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.182" />
@@ -15,7 +15,7 @@
     <PackageVersion Include="xunit.v3" Version="4.0.1" />
     <PackageVersion Include="Argon" Version="0.37.0" />
     <PackageVersion Include="DiffEngine" Version="20.6.0" />
-    <PackageVersion Include="EmptyFiles" Version="8.19.0" />
+    <PackageVersion Include="EmptyFiles" Version="8.20.0" />
     <PackageVersion Include="SimpleInfoName" Version="3.2.0" />
   </ItemGroup>
 </Project>
