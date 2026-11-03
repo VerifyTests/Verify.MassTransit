@@ -5,10 +5,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.5.1" />
-    <PackageVersion Include="MassTransit" Version="9.2.4" />
+    <PackageVersion Include="MassTransit" Version="9.2.5" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.14" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.11.0" />
-    <PackageVersion Include="ProjectDefaults" Version="1.0.184" />
+    <PackageVersion Include="ProjectDefaults" Version="1.0.187" />
     <PackageVersion Include="Sbom" Version="0.3.1" />
     <PackageVersion Include="Verify" Version="33.3.4" />
     <PackageVersion Include="Verify.XunitV3" Version="33.3.4" />
